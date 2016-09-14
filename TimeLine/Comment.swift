@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class Comment {
+class Comment: Equatable {
     let text: String
     let timeStamp: Date
     let post: Post
@@ -19,4 +19,8 @@ class Comment {
         self.post = post
         self.timeStamp = timeStamp
     }
+}
+
+func ==(lhs: Comment, rhs: Comment) -> Bool{
+    return lhs.text == rhs.text && lhs.post == rhs.post && lhs.timeStamp == rhs.timeStamp
 }

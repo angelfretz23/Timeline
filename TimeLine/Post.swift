@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class Post {
+class Post: Equatable {
     
     let photoData: Data?
     let timeStamp: Date
@@ -25,4 +25,8 @@ class Post {
         self.timeStamp = timeStamp
         self.comments = comments
     }
+}
+
+func ==(lhs: Post, rhs: Post) -> Bool{
+    return lhs.photoData == rhs.photoData && lhs.comments == rhs.comments
 }

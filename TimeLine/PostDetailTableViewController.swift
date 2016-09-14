@@ -9,6 +9,8 @@
 import UIKit
 
 class PostDetailTableViewController: UITableViewController {
+    
+    var selectedPost: Post?
 
     override func viewDidLoad() {
         super.viewDidLoad()

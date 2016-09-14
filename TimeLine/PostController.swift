@@ -20,11 +20,15 @@ class PostController{
         
         let post = Post(photoData: imageData)
         addCommentToPost(comment: caption, post: post)
-        
     }
     
     func addCommentToPost(comment: String, post: Post){
         let comment = Comment(text: comment, post: post)
         post.comments.append(comment)
+    }
+    
+    func removePost(post: Post){
+        guard let index = self.posts.index(of: post) else { return }
+        self.posts.remove(at: index)
     }
 }
